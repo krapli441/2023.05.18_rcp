@@ -1,51 +1,52 @@
-let rules = ["가위", "바위", "보"];
+import { rules } from "./rules";
 
 function gamBamBo(challenger: string, you: string) {
-  let a = rules[0];
-  let b = rules[1];
-  let c = rules[2];
-  if (challenger !== a && challenger !== b && challenger !== c) {
+  if (
+    challenger !== rules[0] &&
+    challenger !== rules[1] &&
+    challenger !== rules[2]
+  ) {
     console.error(
       `도전자 측에서 '${challenger}'라고 입력했습니다. 가위, 바위, 보 셋 중 하나를 입력해야 합니다.`
     );
     return false;
   }
-  if (you !== a && you !== b && you !== c) {
+  if (you !== rules[0] && you !== rules[1] && you !== rules[2]) {
     console.error(
       `'${you}'를 입력하였습니다. 가위, 바위, 보 셋 중 하나를 입력해야 합니다 `
     );
     return false;
   }
   // 내가 바위를 냈을 때
-  if (challenger === a && you === b) {
+  if (challenger === rules[0] && you === rules[1]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return true;
-  } else if (challenger === b && you === b) {
+  } else if (challenger === rules[1] && you === rules[1]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return true;
-  } else if (challenger === c && you === b) {
+  } else if (challenger === rules[2] && you === rules[1]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return false;
   }
   // 내가 가위를 냈을 때
-  if (challenger === a && you === a) {
+  if (challenger === rules[0] && you === rules[0]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return true;
-  } else if (challenger === b && you === a) {
+  } else if (challenger === rules[1] && you === rules[0]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return false;
-  } else if (challenger === c && you === a) {
+  } else if (challenger === rules[2] && you === rules[0]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return true;
   }
   // 내가 보를 냈을 때
-  if (challenger === a && you === c) {
+  if (challenger === rules[0] && you === rules[2]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return false;
-  } else if (challenger === b && you === c) {
+  } else if (challenger === rules[1] && you === rules[2]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return true;
-  } else if (challenger === c && you === c) {
+  } else if (challenger === rules[2] && you === rules[2]) {
     console.log(`상대방은 ${challenger}를 냈고, 당신은 ${you}를 냈습니다.`);
     return true;
   }
@@ -63,6 +64,10 @@ console.log(gamBamBo("바위", "보"));
 console.log(gamBamBo("보", "가위"));
 console.log(gamBamBo("보", "바위"));
 console.log(gamBamBo("보", "보"));
+
+// 1. 나는 가위, 바위, 보 중 하나를 적어 낸다.
+// 2. 가상의 상대방은 가위, 바위, 보 중 하나를 랜덤으로 정한다.
+// 3. 결과를 비교한다.
 
 // 첫 번째 매개변수가 가위인 경우
 // 두 번째 매개변수가 바위인 경우
