@@ -1,9 +1,6 @@
 import { rules } from "./rules";
-
-function gamBamBoUpgrade() {
-  let randomValue = rules[Math.floor(Math.random() * rules.length)];
-  return randomValue;
-}
+import { result } from "./result";
+import { gamBamBoUpgrade } from "./randomValue";
 
 function gambamboRemaster(you: string) {
   let enemy = gamBamBoUpgrade();
@@ -19,10 +16,11 @@ function gambamboRemaster(you: string) {
       );
       return true;
     } else {
-      console.log(`상대방은 ${enemy}를 냈고, 당신은 ${you}를 냈습니다.`);
-      console.log("이겼거나 졌습니다");
+      console.log(result(enemy, you));
+      // console.log(`상대방은 ${enemy}를 냈고, 당신은 ${you}를 냈습니다.`);
+      // console.log("이겼거나 졌습니다");
     }
   }
 }
 
-console.log(gambamboRemaster("바위"));
+console.log(gambamboRemaster("가위"));
