@@ -1,5 +1,6 @@
 import { rules } from "./rules";
 
+// 가상의 상대방이 낸 값과 내가 낸 값을 비교하는 함수
 export function result(enemy: string, you: string) {
   if (enemy === rules[0] && you === rules[1]) {
     console.log(`상대방은 ${enemy}를 냈고, 당신은 ${you}를 냈습니다.`);

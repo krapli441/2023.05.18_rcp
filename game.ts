@@ -1,5 +1,6 @@
 import { rules } from "./rules";
 
+// 1차적으로 작성한 함수
 function gamBamBo(challenger: string, you: string) {
   if (
     challenger !== rules[0] &&
