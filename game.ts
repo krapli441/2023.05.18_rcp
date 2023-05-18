@@ -1,7 +1,9 @@
+let rules = ["가위", "바위", "보"];
+
 function gamBamBo(challenger: string, you: string) {
-  let a: "가위" = "가위";
-  let b: "바위" = "바위";
-  let c: "보" = "보";
+  let a = rules[0];
+  let b = rules[1];
+  let c = rules[2];
   if (challenger !== a && challenger !== b && challenger !== c) {
     console.error(
       `도전자 측에서 '${challenger}'라고 입력했습니다. 가위, 바위, 보 셋 중 하나를 입력해야 합니다.`
@@ -52,7 +54,15 @@ function gamBamBo(challenger: string, you: string) {
   // 주먹은 보에겐 지고, 가위에겐 이긴다.
 }
 
+console.log(gamBamBo("가위", "가위"));
+console.log(gamBamBo("가위", "바위"));
 console.log(gamBamBo("가위", "보"));
+console.log(gamBamBo("바위", "가위"));
+console.log(gamBamBo("바위", "바위"));
+console.log(gamBamBo("바위", "보"));
+console.log(gamBamBo("보", "가위"));
+console.log(gamBamBo("보", "바위"));
+console.log(gamBamBo("보", "보"));
 
 // 첫 번째 매개변수가 가위인 경우
 // 두 번째 매개변수가 바위인 경우
